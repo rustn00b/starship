@@ -82,6 +82,9 @@ mod battery;
 #[cfg(feature = "battery")]
 pub use self::battery::{BatteryInfoProvider, BatteryInfoProviderImpl};
 
+#[cfg(target_os = "linux")]
+mod linux_netns;
+
 use crate::config::ModuleConfig;
 use crate::context::{Context, Shell};
 use crate::module::Module;
@@ -135,6 +138,8 @@ pub fn handle<'a>(module: &str, context: &'a Context) -> Option<Module<'a>> {
             "kubernetes" => kubernetes::module(context),
             "line_break" => line_break::module(context),
             "localip" => localip::module(context),
+            #[cfg(target_os = "linux")]
+            "linux_netns" => linux_netns::module(context),
             "lua" => lua::module(context),
             "memory_usage" => memory_usage::module(context),
             "nim" => nim::module(context),
@@ -240,6 +245,8 @@ pub fn description(module: &str) -> &'static str {
         "kubernetes" => "The current Kubernetes context name and, if set, the namespace",
         "line_break" => "Separates the prompt into two lines",
         "localip" => "The currently assigned ipv4 address",
+        #[cfg(target_os = "linux")]
+        "linux_netns" => "The current network namespace",
         "lua" => "The currently installed version of Lua",
         "memory_usage" => "Current system memory and swap usage",
         "nim" => "The currently installed version of Nim",

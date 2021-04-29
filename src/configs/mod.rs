@@ -43,6 +43,7 @@ pub mod julia;
 pub mod kotlin;
 pub mod kubernetes;
 pub mod line_break;
+pub mod linux_netns;
 pub mod localip;
 pub mod lua;
 pub mod memory_usage;
@@ -177,6 +178,8 @@ pub struct FullConfig<'a> {
     localip: localip::LocalipConfig<'a>,
     #[serde(borrow)]
     lua: lua::LuaConfig<'a>,
+    #[serde(borrow)]
+    linux_netns: linux_netns::LinuxNetNsConfig<'a>,
     #[serde(borrow)]
     memory_usage: memory_usage::MemoryConfig<'a>,
     #[serde(borrow)]

@@ -46,12 +46,17 @@ pub const ALL_MODULES: &[&str] = &[
     "hg_branch",
     "hostname",
     "java",
+    #[cfg(target_os = "linux")]
+    "linux_netns",
+    "scala",
     "jobs",
     "julia",
     "kotlin",
     "kubernetes",
     "line_break",
     "localip",
+    #[cfg(target_os = "linux")]
+    "linux_netns",
     "lua",
     "memory_usage",
     "nim",

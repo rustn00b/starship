@@ -85,6 +85,8 @@ pub const PROMPT_ORDER: &[&str] = &[
     "azure",
     "env_var",
     "crystal",
+    #[cfg(target_os = "linux")]
+    "linux_netns",
     "custom",
     "sudo",
     "cmd_duration",

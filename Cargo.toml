@@ -109,6 +109,10 @@ features = [
 [target.'cfg(not(windows))'.dependencies]
 nix = { version = "0.25.0", default-features = false, features = ["feature", "fs", "user"] }
 
+#[target.'cfg(target_os = "linux")'.dependencies]
+libc = "0.2"
+procfs = "0.14"
+
 [build-dependencies]
 shadow-rs = { version = "0.16.3", default-features = false }
 dunce = "1.0.2"

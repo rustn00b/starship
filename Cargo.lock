@@ -1026,9 +1026,9 @@ dependencies = [
 
 [[package]]
 name = "git-features"
-version = "0.22.1"
+version = "0.22.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "48289da362ef7ee1412a9a80bb459406d3045ad604484526210d594d10aa5268"
+checksum = "e1aebbcd709f9a324d3b881801b0e30af616d51ae1a6619b36aee5dc81960131"
 dependencies = [
  "crc32fast",
  "crossbeam-channel",
@@ -1042,7 +1042,7 @@ dependencies = [
  "parking_lot 0.12.1",
  "prodash",
  "quick-error",
- "sha-1",
+ "sha1 0.10.2",
  "sha1_smol",
  "walkdir",
 ]
@@ -1059,12 +1059,12 @@ dependencies = [
 
 [[package]]
 name = "git-hash"
-version = "0.9.7"
+version = "0.9.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "898628aaedf437563872461736f861acc1503e23ee4a59857513b0261c014460"
+checksum = "0fafbe250292836c26f0e447f661789771c433ed50e49bc3d55b9fbc7c667213"
 dependencies = [
  "hex",
- "quick-error",
+ "thiserror",
 ]
 
 [[package]]
@@ -2533,7 +2533,6 @@ dependencies = [
  "cfg-if 1.0.0",
  "cpufeatures",
  "digest 0.10.3",
- "sha1-asm",
 ]
 
 [[package]]
@@ -2543,6 +2542,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c1da05c97445caa12d05e848c4a4fcbbea29e748ac28f7e80e9b010392063770"
 dependencies = [
  "sha1_smol",
+]
+
+[[package]]
+name = "sha1"
+version = "0.10.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5cf2781a4ca844dd4f9b608a1791eea19830df0ad3cdd9988cd05f1c66ccb63a"
+dependencies = [
+ "cfg-if 1.0.0",
+ "cpufeatures",
+ "digest 0.10.3",
+ "sha1-asm",
 ]
 
 [[package]]
@@ -2894,18 +2905,18 @@ dependencies = [
 
 [[package]]
 name = "thiserror"
-version = "1.0.32"
+version = "1.0.33"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f5f6586b7f764adc0231f4c79be7b920e766bb2f3e51b3661cdb263828f19994"
+checksum = "3d0a539a918745651435ac7db7a18761589a94cd7e94cd56999f828bf73c8a57"
 dependencies = [
  "thiserror-impl",
 ]
 
 [[package]]
 name = "thiserror-impl"
-version = "1.0.32"
+version = "1.0.33"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "12bafc5b54507e0149cdf1b145a5d80ab80a90bcd9275df43d4fff68460f6c21"
+checksum = "c251e90f708e16c49a16f4917dc2131e75222b72edfa9cb7f7c58ae56aae0c09"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -3535,7 +3546,7 @@ dependencies = [
  "rand 0.8.5",
  "serde",
  "serde_repr",
- "sha1",
+ "sha1 0.6.1",
  "static_assertions",
  "tracing",
  "uds_windows",
